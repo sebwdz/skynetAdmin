@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/head.css">
+    {% block customCss %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div id="block">
+    <div class="row">
+        <div class="col-sm-12" id="headBand">
+            {% block head %}{% endblock %}
+        </div>
+        <div class="col-sm-12">
+            <div class="well">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        <div class="col-sm-12">
+            {% block footer %}{% endblock %}
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/vendor/components/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+{% block customJs %}{% endblock %}
+</body>
+</html>

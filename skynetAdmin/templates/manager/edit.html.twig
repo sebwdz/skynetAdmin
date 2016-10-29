@@ -1,0 +1,30 @@
+{% extends "template.html.twig" %}
+
+{% block title %} set request settings {% endblock %}
+
+{% block content %}
+
+    <div class="page-header"><h1>Request settings</h1></div>
+
+    <form class="form-horizontal" method="post">
+        <div class="form-group">
+            <label for="Name" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Name" name="name" value="{{ manager.name }}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Request" class="col-sm-2 control-label">Request</label>
+            <div class="col-sm-10">
+                <textarea id="Request" class="form-control" name="settings">{{ manager.settings }}</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default" id="Submit">Submit</button>
+                <a href="/index.php/managers" class="btn btn-default" id="GoBack">Go back</a>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

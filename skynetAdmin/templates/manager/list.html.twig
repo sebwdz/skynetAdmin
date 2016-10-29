@@ -1,0 +1,48 @@
+{% extends "template.html.twig" %}
+
+{% block title %} set request settings {% endblock %}
+
+{% block customCss %}
+    <link rel="stylesheet", type="text/css" href="/js/jquery.bootgrid-1.3.1/jquery.bootgrid.min.css">
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-header"><h1>List Managers</h1></div>
+
+    <table class="table table-condensed table-hover table-striped" id="manager-table">
+        <thead>
+        <tr>
+            <th data-column-id="id">id</th>
+            <th data-column-id="type">type</th>
+            <th data-column-id="name">name</th>
+            <th data-column-id="action" data-formatter="link"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for m in managers %}
+            <tr>
+                <td> {{ m.id }} </td>
+                <td> {{ m.type }} </td>
+                <td> {{ m.name }} </td>
+                <td></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="dropdown col-sm-offset-10">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            New Manager
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="/index.php/managers/request">Request</a></li>
+        </ul>
+    </div>
+
+{% endblock %}
+{% block customJs %}
+    <script type="text/javascript" src="/js/jquery.bootgrid-1.3.1/jquery.bootgrid.min.js"></script>
+    <script type="text/javascript" src="/js/managers.js"></script>
+{% endblock %}

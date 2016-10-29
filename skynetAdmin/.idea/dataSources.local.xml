@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - pocdata@localhost" uuid="d3ffd058-55b8-49ac-9d37-037eb9aec4f0">
+      <database-info product="PostgreSQL" version="9.5.4" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>sebastien</user-name>
+      <resolve-scope>postgres:public,sebastien</resolve-scope>
+    </data-source>
+    <data-source name="PostgreSQL - skynet@localhost" uuid="bbf1c169-6be8-4757-af4b-05c0e7d9b67d">
+      <database-info product="PostgreSQL" version="9.5.4" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>sebastien</user-name>
+      <resolve-scope>skynet:public,sebastien</resolve-scope>
+    </data-source>
+  </component>
+</project>

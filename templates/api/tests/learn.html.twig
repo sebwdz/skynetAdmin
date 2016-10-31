@@ -1,0 +1,43 @@
+{% extends "template.html.twig" %}
+
+
+{% block content %}
+    <input type="hidden" value="{{ movies }}" id="movies">
+    <div id="process">
+
+    </div>
+{% endblock %}
+
+{% block customJs %}
+    <script type="application/javascript">
+        for (var it = 0; it < 0; it++) {
+            $("#result").append('<div class="col-sm-12 well item">' + $("#example").html() + '</div>');
+            $("#result  .item:last-of-type").css("display", "initial");
+        }
+
+        var movies;
+        var total = 0;
+
+        $(function () {
+            movies = JSON.parse($("#movies").val());
+            rec(0);
+            rec(1);
+        });
+
+        function rec(it) {
+            if (it < movies.length) {
+                $.post("/index.php/api/managers/session/31", { /* @Todo add dynamic */
+                    "table_data": {
+                        "users.id": movies[it]["api_id"]
+                    }
+                }, function () {
+                    total++;
+                    $("#process").html("Total : " + ((total / movies.length) * 100) + " %");
+                    rec(it + 2);
+                });
+            }
+        }
+
+    </script>
+
+{% endblock %}
